@@ -1,8 +1,6 @@
 #include<iostream>
 #include<string.h>
 
-typedef std::string string;
-
 void printHelp()
 {
 	printf(
