@@ -30,6 +30,13 @@ int main(int argc, char** argv)
 	char* cmd = argv[1];
 	char* text = argv[2];
 
+	if (strlen(cmd) != 2 || cmd[0] != '-')
+	{
+		printf("No command argument provided.\n");
+		printHelp();
+		return -1;
+	}
+
 	// Parse argument
 	switch ((int)cmd[1])
 	{
@@ -40,9 +47,9 @@ int main(int argc, char** argv)
 			for (int i = 0; i < strlen(text); i++) { printf("%c", text[i] + i); }
 			break;
 		default:
-			printf("No command argument provided.\n");
+			printf("Invalid command argument.\n");
 			printHelp();
-			break;
+			return -1;
 	}	
 
 	return 0;
